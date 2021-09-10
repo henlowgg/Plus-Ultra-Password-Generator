@@ -25,15 +25,15 @@ function generatePassword() {
     }
 
     //ask for a type
-    var pickedLowercase, pickedUppercase, pickedNumeric, pickedSpeical;
+    var pickedLowercase, pickedUppercase, pickedNumeric, pickedSpecial;
     var mergedArray = [];
     while (true) {
-        pickedLowercase = confirm("Would you like lowercases?");
-        pickedUppercase = confirm("Would you like uppercases?");
+        pickedLowercase = confirm("Would you like lowercase characters?");
+        pickedUppercase = confirm("Would you like uppercase characters?");
         pickedNumeric = confirm("Would you like numbers?");
-        pickedSpeical = confirm("Would you like special characters?");
+        pickedSpecial = confirm("Would you like special characters?");
         //if one is true, combine them
-        if (pickedLowercase || pickedUppercase || pickedNumeric || pickedSpeical) {
+        if (pickedLowercase || pickedUppercase || pickedNumeric || pickedSpecial) {
             if (pickedLowercase) {
                 mergedArray = mergedArray.concat(lowercaseArray);
             }
@@ -43,7 +43,7 @@ function generatePassword() {
             if (pickedNumeric) {
                 mergedArray = mergedArray.concat(numericArray);
             }
-            if (pickedSpeical) {
+            if (pickedSpecial) {
                 mergedArray = mergedArray.concat(specialArray);
             }
             break;
@@ -59,21 +59,21 @@ function generatePassword() {
             generatedPassword += mergedArray[Math.floor(Math.random() * mergedArray.length)];
         }
 
-        //check if it includes all types
+        //make sure it includes all types
         var hasLosercase = typeIsIncluded(generatedPassword, pickedLowercase, lowercaseArray);
         var hasUppercase = typeIsIncluded(generatedPassword, pickedUppercase, uppercaseArray);
         var hasNumeric = typeIsIncluded(generatedPassword, pickedNumeric, numericArray);
-        var hasSpecial = typeIsIncluded(generatedPassword, pickedSpeical, specialArray);
+        var hasSpecial = typeIsIncluded(generatedPassword, pickedSpecial, specialArray);
 
         //only return if the generated password meets all selected types
         if ((pickedLowercase === hasLosercase) &&
             (pickedUppercase === hasUppercase) &&
             (pickedNumeric === hasNumeric) &&
-            (pickedSpeical === hasSpecial)) {
+            (pickedSpecial === hasSpecial)) {
             //console.log("The generated password "+generatedPassword+ " meets the requirements.");
             return generatedPassword;
         } else {
-            //console.log("The generated password "+generatedPassword+ " does not meet minimum requirements. Will generate again.");
+            //console.log("The generated password "+generatedPassword+ " does not meet minimum requirements.");
         }
     }
 }
