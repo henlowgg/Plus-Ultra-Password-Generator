@@ -8,7 +8,7 @@
 - When enterering the application, simply click the (Generate Password) button, then follow the prompts to successfully generate a secure password.
 - Github repo is viewable here: https://github.com/henlowgg/Plus-Ultra-Password-Generator
 - Site is viewable at: https://henlowgg.github.io/Plus-Ultra-Password-Generator/
-- Preview: ![plot](Assets\Images\preview.png)
+- Preview: ![plot](./Assets/Images/preview.png)
 
 ## Credits
 - Leif E. Hetland for helping me to understand functioning code and how to utilize arrays.
